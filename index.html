@@ -57,7 +57,23 @@
     const input = document.querySelector("#taskInput");
     const button = document.querySelector("#addTaskBtn");
     const list = document.querySelector("#taskList");
-    button.addEventListener("click", ()=>{}):
+    button.addEventListener("click", ()=>{
+        const taskText = input.value;
+        if (taskText === ""){
+            alert("Escribe tarea primero");
+            return;
+        }
+        const newTask = document.createElement("li");
+        newTask.textContent = taskText;
+        list.appendChild(newTask);
+        input.value = "";
+        
+    });
+    list.addEventListener("click",(e)=>{
+            if (e.target.tagName === "LI"){
+                e.target.remove ();
+            }
+        });
 </script>
 </body>
 </html>
